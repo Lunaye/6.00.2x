@@ -48,11 +48,8 @@ class RectangularRoom(object):
         """
         m = int(m)
         n = int(n)
-        if self.tiles[(m, n)]:
-            return True
-        else:
-            return False    
-    
+        return self.tiles[(m, n)]:
+
     def getNumTiles(self):
         """
         Return the total number of tiles in the room.
@@ -69,7 +66,7 @@ class RectangularRoom(object):
         """        
         count = 0
         for each in self.tiles:
-            if self.tiles[each] == True:
+            if self.tiles[each]:
                 count += 1
         return count            
 
@@ -90,7 +87,4 @@ class RectangularRoom(object):
         pos: a Position object.
         returns: True if pos is in the room, False otherwise.
         """        
-        if (0 <= pos.x < self.width ) and (0 <= pos.y < self.height):
-            return True
-        else:
-            return False
+        return ((0 <= pos.x < self.width ) and (0 <= pos.y < self.height))
